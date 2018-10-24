@@ -1,4 +1,4 @@
-package Model;
+package com.bookweb.BookService.Model;
 
 public class User {
     int b=0;

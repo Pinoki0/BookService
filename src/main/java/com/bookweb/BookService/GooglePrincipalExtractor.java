@@ -8,13 +8,11 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
+
 @Component
 public class GooglePrincipalExtractor implements PrincipalExtractor {
+    @Autowired
     private UserRepository userRepository;
-    GooglePrincipalExtractor(UserRepository userRepository)
-    {
-        this.userRepository = userRepository;
-    }
 
     @Override
     public Object extractPrincipal(Map<String, Object> map) {

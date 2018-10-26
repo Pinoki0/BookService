@@ -26,8 +26,9 @@ public class GooglePrincipalExtractor implements PrincipalExtractor {
             user.setName((String) map.get("name"));
             user.setPicture((String) map.get("picture"));
             user.setLoginType(UserLoginType.GOOGLE);
+            userRepository.save(user);
         }
-        userRepository.save(user);
+
         return user;
         }
 

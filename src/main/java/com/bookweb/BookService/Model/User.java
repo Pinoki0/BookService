@@ -1,16 +1,40 @@
 package com.bookweb.BookService.Model;
-
-
 import org.springframework.data.annotation.Id;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+
+@Entity
 public class User {
     @Id
+    @GeneratedValue
     private String id;
-
+    @Column
     private String name;
+    @Column
     private String picture;
+    @Column
     private String email;
 
+    public Enum getLoginType() {
+        return loginType;
+    }
+
+    public void setLoginType(Enum loginType) {
+        this.loginType = loginType;
+    }
+
+    private Enum loginType;
+    public String getPrincipalId() {
+        return principalId;
+    }
+
+    public void setPrincipalId(String principalId) {
+        this.principalId = principalId;
+    }
+
+    private String principalId;
     public String getId() {
         return id;
     }
@@ -42,9 +66,6 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-
-
-
 
     public User() {}
 

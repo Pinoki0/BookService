@@ -12,9 +12,9 @@ import java.security.Principal;
 @Controller
 public class ServiceController {
     @RequestMapping("/user")
-    @ResponseBody
-    public User user(@AuthenticationPrincipal User principal)
+   // @ResponseBody
+    public String user(@AuthenticationPrincipal User principal)
     {
-        return principal;
+        return "index2";
     }
 }

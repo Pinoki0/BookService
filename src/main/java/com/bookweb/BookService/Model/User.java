@@ -1,25 +1,22 @@
 package com.bookweb.BookService.Model;
 import com.bookweb.BookService.UserLoginType;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
+import java.util.List;
 
-@Entity
+@Document(collection = "users")
 public class User {
     @Id
     private String id;
-    @Column
     private String name;
-    @Column
     private String picture;
-    @Column
     private String email;
-    @Column
     private UserLoginType loginType;
-    @Column
     private String principalId;
+    private List<Object> observed;
+    private List<Object> likes;
+
     public Enum getLoginType() {
         return loginType;
     }
@@ -27,7 +24,6 @@ public class User {
     public void setLoginType(UserLoginType loginType) {
         this.loginType = loginType;
     }
-
 
     public String getPrincipalId() {
         return principalId;
@@ -77,11 +73,27 @@ public class User {
         this.email=email;
         this.picture=picture;
     }
+    public List<Object> getObservedId() {
+        return observed;
+    }
 
-    @Override
-    public String toString() {
-        return String.format(
-                "Customer[id=%s,email='%s', name='%s',  picture='%s' ]",
-                id, email, name, picture);
+    public void setObservedId(List<Object> friends) {
+        this.observed = friends;
+    }
+
+    public List<Object> getLikes() {
+        return likes;
+    }
+
+    public void setLikes(List<Object> likes) {
+        this.likes = likes;
+    }
+    public void addLike(String bookId)
+    {
+        likes.add(bookId);
+    }
+    public void addObserved(String observed)
+    {
+        this.observed.add(observed);
     }
 }

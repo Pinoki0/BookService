@@ -12,7 +12,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 @EnableOAuth2Sso
 @Configuration
-public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
+public class
+WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http

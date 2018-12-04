@@ -17,7 +17,7 @@ public class GooglePrincipalExtractor implements PrincipalExtractor {
     @Override
     public Object extractPrincipal(Map<String, Object> map) {
         String principalId = (String) map.get("id");
-        User user = userRepository.findByPrincipalId(principalId);
+        User user = userRepository.findUserByPrincipalId(principalId);
         if(user == null) {
 
             user = new User();

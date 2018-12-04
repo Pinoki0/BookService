@@ -14,8 +14,26 @@ public class User {
     private String email;
     private UserLoginType loginType;
     private String principalId;
-    private List<Object> observed;
-    private List<Object> likes;
+    private List<String> observed;
+    private List<String> likes;
+
+    public List<String> getObserved() {
+        return observed;
+    }
+
+    public void setObserved(List<String> observed) {
+        this.observed = observed;
+    }
+
+    public List<BookRating> getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(List<BookRating> ratings) {
+        this.ratings = ratings;
+    }
+
+    private List<BookRating> ratings;
 
     public Enum getLoginType() {
         return loginType;
@@ -73,19 +91,13 @@ public class User {
         this.email=email;
         this.picture=picture;
     }
-    public List<Object> getObservedId() {
-        return observed;
-    }
 
-    public void setObservedId(List<Object> friends) {
-        this.observed = friends;
-    }
 
-    public List<Object> getLikes() {
+    public List<String> getLikes() {
         return likes;
     }
 
-    public void setLikes(List<Object> likes) {
+    public void setLikes(List<String> likes) {
         this.likes = likes;
     }
     public void addLike(String bookId)

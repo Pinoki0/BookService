@@ -25,7 +25,7 @@ WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .anyRequest()
                 .authenticated()
-                .and().logout().logoutSuccessUrl("/index.html");
+                .and().logout().logoutSuccessUrl("/");
     }
 
 }

@@ -1,10 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>SEARCH</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-
+<div id="wrapper">
+    <div id="headerwrap">
+        <div id="header">
+            <p>This is the Header</p>
+        </div>
+    </div>
+    <div id="navigationwrap">
+        <div id="navigation">
+            <div id="stylefour">
+                <ul>
+                    <li><a href="/user" title=""><span>Home</span></a></li>
+                    <li><a href="/news" title=""><span>News</span></a></li>
+                    <li><a href="/search" title=""><span>Search</span></a></li>
+                    <li><a href="/social" title=""><span>Social</span></a></li>
+                    <li><a href="/logout" title=""><span>Logout</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="contentwrap">
+        <div id="content">
+            <form method="GET" action="/book/name/{name}" >
+                <p>Find by book name:</p>
+                <table>
+                    <tr>
+                        <td><label>Name</label></td>
+                        <td><input name="name"/></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="Submit"/></td>
+                    </tr>
+                </table>
+            </form>
+            <form method="GET" action="/book/genre/{genre}" >
+                <p>Find by book genre:</p>
+                <table>
+                    <tr>
+                        <td><label>Genre</label></td>
+                        <td><input name="genre"/></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="Submit"/></td>
+                    </tr>
+                </table>
+            </form>
+            <form method="GET" action="/book/premiere/from={dateFrom}to={dateTo}" >
+                <p>Find by book premiere:</p>
+                <table>
+                    <tr>
+                        <td><label>
+                            Premiere</label></td>
+                        <td><input type="date" name="premiere"/></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="Submit"/></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>

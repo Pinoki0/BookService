@@ -19,12 +19,23 @@ import java.util.Properties;
 @Controller
 public class ServiceController {
 
-    @RequestMapping("/home")
+    @RequestMapping("/user")
     public String home(@AuthenticationPrincipal User principal)
     {
         return "home";
     }
 
+    @RequestMapping("/search")
+    public String search()
+    {
+        return "search";
+    }
+
+    @RequestMapping("/news")
+    public String news()
+    {
+        return "news";
+    }
 
 
 }
